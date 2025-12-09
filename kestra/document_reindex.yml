@@ -1,0 +1,26 @@
+id: orionflow.document_reindex
+namespace: orionflow
+
+tasks:
+  - id: fetch_docs
+    type: python
+    script: |
+      print("Fetching new documents for indexing...")
+      # TODO: Implement real document fetching (S3, DB, etc.)
+
+  - id: preprocess
+    type: python
+    script: |
+      print("Cleaning and preparing text...")
+      # TODO: Implement normalization, cleaning, splitting, etc.
+
+  - id: upload_s3
+    type: aws.s3.upload
+    bucket: "orionflow-docs"
+    from: "/tmp/docs"
+    to: "raw/"
+
+  - id: kendra_index
+    type: aws.kendra.index
+    indexId: "{{ vars.kendra_index_id }}"
+    roleArn: "{{ vars.kendra_role }}"

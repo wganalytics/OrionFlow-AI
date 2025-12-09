@@ -1,2 +1,4 @@
-# OrionFlow-AI
-OrionFlow AI é um motor de orquestração multiagente que combina AWS Bedrock, AWS Kendra e Kestra para automatizar decisões empresariais. Executa busca, raciocínio, validação e ações em sistemas corporativos via uma arquitetura moderna de IA.
+# OrionFlow AI
+
+Multi-Agent Orchestration Engine for Enterprise Automation using AWS Kendra, AWS Bedrock (mock) and Kestra.
+This repository contains the FastAPI backend, agents, services and a sample Kestra pipeline.
